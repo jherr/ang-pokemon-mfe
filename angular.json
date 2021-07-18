@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "projects": {
+    "search": {
+      "projectType": "application",
+      "root": "apps/search",
+      "sourceRoot": "apps/search/src",
+      "prefix": "ang-pokemon-mfe",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/search",
+            "index": "apps/search/src/index.html",
+            "main": "apps/search/src/main.ts",
+            "polyfills": "apps/search/src/polyfills.ts",
+            "tsConfig": "apps/search/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/search/src/favicon.ico", "apps/search/src/assets"],
+            "styles": ["apps/search/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/search/src/environments/environment.ts",
+                  "with": "apps/search/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "search:build:production"
+            },
+            "development": {
+              "browserTarget": "search:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "search:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/search/src/**/*.ts",
+              "apps/search/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/search"],
+          "options": {
+            "jestConfig": "apps/search/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "search-e2e": {
+      "root": "apps/search-e2e",
+      "sourceRoot": "apps/search-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/search-e2e/cypress.json",
+            "tsConfig": "apps/search-e2e/tsconfig.e2e.json",
+            "devServerTarget": "search:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "search:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/search-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "search"
+}
