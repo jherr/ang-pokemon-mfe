@@ -1,0 +1,8 @@
+<div class="max-w-min" style="border: 10px dashed red; border-radius: 1em; padding: 1em;">
+  <p-carousel *ngIf="images.length > 0" [value]="images" [numVisible]="3" [numScroll]="1">
+    <ng-template let-item pTemplate="item">
+      <h2 [innerText]="item.name" class="center"></h2>
+      <img [src]="item.image" style="width: 100%;" />
+    </ng-template>
+  </p-carousel>
+</div>

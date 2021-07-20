@@ -25,10 +25,12 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation": "^12.4.0",
     "@angular/animations": "^12.0.0",
     "@angular/common": "^12.0.0",
     "@angular/compiler": "^12.0.0",
@@ -38,6 +40,9 @@
     "@angular/platform-browser-dynamic": "^12.0.0",
     "@angular/router": "^12.0.0",
     "@nrwl/angular": "12.5.8",
+    "primeflex": "^3.0.0",
+    "primeicons": "^4.1.0",
+    "primeng": "^12.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

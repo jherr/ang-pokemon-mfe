@@ -27,6 +27,13 @@
     ]
   },
   "projects": {
+    "home": {
+      "tags": []
+    },
+    "home-e2e": {
+      "tags": [],
+      "implicitDependencies": ["home"]
+    },
     "search": {
       "tags": []
     },
