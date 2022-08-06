@@ -32,7 +32,9 @@ module.exports = {
 
       // For hosts (please adjust)
       remotes: {
-        search: 'search@http://localhost:4201/remoteEntry.js',
+        search: 'search@http://module-federation-extensions.s3-website-us-east-1.amazonaws.com/pokemon-search/remoteEntry.js',
+        //search: 'search@http://localhost:4201/remoteEntry.js',
+        //search: 'search@http://localhost:4200/assets/search/remoteEntry.js',
       },
 
       shared: share({

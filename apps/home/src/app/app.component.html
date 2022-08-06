@@ -1,6 +1,8 @@
 <h2 class="p-5">Home</h2>
 
-<ang-pokemon-mfe-carousel-host></ang-pokemon-mfe-carousel-host>
+<div *ngFor="let extension of extensionList">
+  <extension-host [extension]="extension"></extension-host>
+</div>
 
 <div class="m-6">
   <div class="shadow-8 border-1 border-blue-500 p-5" style="border-radius: 1em;">
@@ -13,6 +15,13 @@
         <div>
           It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.
         </div>
+        <div>        
+          <input
+          webkitdirectory
+          directory
+          multiple (change)="s3upload($event)" type="file" id="fileUpload">    
+       </div>        
+       <button (click)="loadExtension()">Load Extension</button>
       </div>
     </div>
   </div>

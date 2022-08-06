@@ -9,10 +9,10 @@ import { CarouselModule } from 'primeng/carousel';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { AppComponent } from './app.component';
-import { CarouselHostComponent } from './carousel-host/carousel-host.component';
+import { ExtensionHostComponent } from './extension-host/extension-host.component';
 
 @NgModule({
-  declarations: [AppComponent, CarouselHostComponent],
+  declarations: [AppComponent, ExtensionHostComponent],
   imports: [
     BrowserModule,
     FormsModule,

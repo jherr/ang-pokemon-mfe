@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarouselHostComponent } from './carousel-host.component';
+import { ExtensionHostComponent } from './extension-host.component';
 
 describe('CarouselHostComponent', () => {
-  let component: CarouselHostComponent;
-  let fixture: ComponentFixture<CarouselHostComponent>;
+  let component: ExtensionHostComponent;
+  let fixture: ComponentFixture<ExtensionHostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarouselHostComponent ]
+      declarations: [ ExtensionHostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarouselHostComponent);
+    fixture = TestBed.createComponent(ExtensionHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
